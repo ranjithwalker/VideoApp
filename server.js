@@ -17,7 +17,6 @@ app.get('/' , (req,res)=>{
 app.get('/:room' , (req,res)=>{
     res.render('index' , {RoomId:req.params.room});
 });
-
 io.on("connection" , (socket)=>{
   socket.on('newUser' , (id , room)=>{
     socket.join(room);
